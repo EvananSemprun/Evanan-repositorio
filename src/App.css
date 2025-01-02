@@ -1,0 +1,33 @@
+@media (max-width: 768px) {
+  .mantine-Card {
+    width: 100%;
+    margin: 1rem;
+  }
+
+  .mantine-Group {
+    flex-direction: column; 
+  }
+
+  .mantine-Tabs {
+    width: 100%;
+  }
+
+  .mantine-Image {
+    width: 100%;
+    height: auto;
+  }
+
+  .mantine-Text {
+    font-size: 16px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .mantine-Group {
+    padding-left: 0;
+  }
+
+  .mantine-Tabs {
+    margin-top: 1rem;
+  }
+}
