@@ -1,26 +1,22 @@
-import { Grid, Card, Group, Image } from '@mantine/core';
+import { Grid, Card, Group, Image, Button, Title } from '@mantine/core';
 
 function Skill() {
   return (
     <Group
+      mr={45}
+      position='center'
+      ml={45}
+      mt={35}
       spacing="lg"
       style={{
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
       }}
     >
-      <div style={{ flex: '1 1 60%', maxWidth: '60%' }}>
+      <div style={{ flex: '1 1 60%', maxWidth: '60%', justifyContent: 'center' }}>
+        <Title ta='center' order={2}>Habilidades tecnológicas</Title>
         <Grid gutter="lg">
-          {[
-            '/html.png',
-            '/js.png',
-            '/react.png',
-            '/ts.png',
-            '/c.png',
-            'https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80',
-          ].map((src, index) => (
+          {['/js.png', '/react.png', '/ts.png', '/c.png'].map((src, index) => (
             <Grid.Col key={index} xs={6} sm={4} md={3} lg={2.4}>
               <Card
                 shadow="sm"
@@ -31,14 +27,14 @@ function Skill() {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  justifyContent: 'center', // Centra contenido vertical y horizontalmente
+                  justifyContent: 'center',
                   height: '100%',
                 }}
               >
                 <div
                   style={{
-                    width: '80%', // Ajusta según el tamaño deseado
-                    aspectRatio: '1', // Relación de aspecto 1:1
+                    width: '80%',
+                    aspectRatio: '1',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -52,7 +48,7 @@ function Skill() {
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'contain', // Usa 'contain' para que las imágenes mantengan proporciones
+                      objectFit: 'contain',
                     }}
                   />
                 </div>
@@ -61,22 +57,30 @@ function Skill() {
           ))}
         </Grid>
       </div>
-      <Card
-        shadow="sm"
-        p="lg"
-        radius="md"
-        withBorder
-        style={{
-          flex: '1 1 35%',
-          maxWidth: '35%',
-          margin: '1rem auto',
-        }}
-      >
-        <div>
-          <h3>Información</h3>
-          <p>Añade aquí detalles adicionales.</p>
-        </div>
-      </Card>
+
+      <div style={{ flex: '1 1 40%', display: 'flex', justifyContent: 'center' }}>
+        <Button
+          radius="lg"
+          size="lg"
+          style={{
+            backgroundColor: '#e5b501',
+            color: '#fff',
+            transition: 'all 0.3s ease',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = '#c89f00';
+            e.currentTarget.style.transform = 'scale(1.05)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = '#e5b501';
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
+        >
+          Descargar CV
+        </Button>
+
+      </div>
     </Group>
   );
 }
